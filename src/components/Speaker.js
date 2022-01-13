@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react"
 import apiUtils from "../utils/apiUtils"
-import axios from "axios";
 import { NavLink } from "react-router-dom"
 
 
@@ -24,7 +23,7 @@ const Speaker = () => {
 
 
         <div>
-            <h1>Welcome to SPEAKER SITE</h1>
+            <h1>Welcome to User SPEAKER SITE</h1>
 
             <table className="table">
                 <thead>

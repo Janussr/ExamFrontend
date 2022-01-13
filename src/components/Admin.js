@@ -13,7 +13,11 @@ const Admin = ({ currentRoles }) => {
   }
 
   const viewTalks = () => {
-    navigate('/createconference')
+    navigate('/talk')
+  }
+
+  const viewSpeakers = () => {
+    navigate('/adminspeakersite')
   }
 
   return (
@@ -23,6 +27,7 @@ const Admin = ({ currentRoles }) => {
     
       <button className="btn btn-success m-1 " onClick={viewCreateConference}>Conference Info</button> 
       <button className="btn btn-success m-1 " onClick={viewTalks}>Talks Info</button> 
+      <button className="btn btn-success m-1 " onClick={viewSpeakers}>Speaker Info</button> 
     
     </div >
   )

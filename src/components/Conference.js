@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react"
 import apiUtils from "../utils/apiUtils"
-import axios from "axios";
 import { NavLink } from "react-router-dom"
 
 const Conference = () => {

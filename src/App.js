@@ -13,6 +13,8 @@ import CreateConference from './components/CreateConference';
 import ConferenceContent from './components/ConferenceContent';
 import Speaker from './components/Speaker';
 import SpeakerContent from './components/SpeakerContent';
+import Talk from './components/Talk';
+import AdminSpeakerSite from './components/AdminSpeakerSite';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -33,6 +35,8 @@ function App() {
         <Route path='conferencecontent/:id' element={<ConferenceContent />} />
         <Route path='speaker' element={<Speaker />} />
         <Route path='speakercontent/:id' element={<SpeakerContent />} />
+        <Route path='adminspeakersite' element={<AdminSpeakerSite />} />
+        <Route path='talk' element={<Talk />} />
       </Routes>
     </div >
   );

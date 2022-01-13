@@ -38,14 +38,6 @@ const CreateConference = () => {
     }, [URL]);
 
 
-    const deletedata = async (event) => {
-        const conId = event.target.id
-        await axios.delete(URL + '/conference/' + conId)
-
-        //Fetch again in the function in order to re render the website(so it doesnt spam in network)
-        const response = await apiUtils.getAuthAxios().get(URL + '/conference/all')
-            setConferences(response.data.conferenceDTOs)
-    }
 
     return (
         <div>
@@ -64,7 +56,6 @@ const CreateConference = () => {
                         <th>Date</th>
                         <th>time the conference starts</th>
                         <th>See talks in this conference</th>
-                        <th>delete</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -76,7 +67,6 @@ const CreateConference = () => {
                     <td>{c.date}</td>
                     <td>{c.time}</td>
                     <td><NavLink to={`/conferencecontent/${c.id}`}><button className="btn btn-success">See talks in this conference</button></NavLink></td>
-                    <td><button className="btn btn-danger" id={c.id} onClick={deletedata}>Delete</button></td>
                     </tr>))}
 
 

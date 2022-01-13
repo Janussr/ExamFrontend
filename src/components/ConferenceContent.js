@@ -22,9 +22,6 @@ useEffect(() => {
 
     return (
 
-
-
-
         <div>
             <h1>Welcome here you can see talks in this conference with the ID: {id}</h1>
 
