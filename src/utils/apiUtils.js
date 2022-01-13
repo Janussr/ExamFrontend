@@ -1,4 +1,7 @@
-const URL = 'http://localhost:8080/CA2_war_exploded/api';
+import axios from "axios";
+
+const URL = 'http://localhost:8080/ExamBackend_war_exploded/api';
+//const URL = 'https://januscphb.dk/tomcat/Exam/api';
 
 const apiUtils = () => {
 

@@ -8,6 +8,7 @@ import LandingPage from './components/LandingPage';
 import User from './components/User';
 import Admin from './components/Admin';
 import NoMatch from './components/NoMatch';
+import Conference from './components/Conference';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -23,6 +24,7 @@ function App() {
         <Route path='user' element={<User currentRoles={currentRoles} />} />
         <Route path='admin' element={<Admin currentRoles={currentRoles} />} />
         <Route path='*' element={<NoMatch />} />
+        <Route path='conference' element={<Conference />} />
       </Routes>
     </div >
   );
