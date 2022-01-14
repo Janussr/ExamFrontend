@@ -79,7 +79,7 @@ const Talk = () => {
             <div className="center">
                 <form onChange={handleInput}>
                     <input placeholder="topic" id="topic" />
-                    <input placeholder="duration" id="duration" />
+                    <input placeholder="duration between 1-10" id="duration" />
                     <input placeholder="propsList" id="propsList" />
                     <input  id="id" placeholder="Enter conference ID" type="text"></input>
                 </form>   
