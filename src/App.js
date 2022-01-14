@@ -15,6 +15,7 @@ import Speaker from './components/Speaker';
 import SpeakerContent from './components/SpeakerContent';
 import Talk from './components/Talk';
 import AdminSpeakerSite from './components/AdminSpeakerSite';
+import EditConference from './components/EditConference';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -32,6 +33,7 @@ function App() {
         <Route path='*' element={<NoMatch />} />
         <Route path='conference' element={<Conference />} />
         <Route path='createconference' element={<CreateConference />} />
+        <Route path='editconference/:id' element={<EditConference />} />
         <Route path='conferencecontent/:id' element={<ConferenceContent />} />
         <Route path='speaker' element={<Speaker />} />
         <Route path='speakercontent/:id' element={<SpeakerContent />} />

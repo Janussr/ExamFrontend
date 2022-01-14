@@ -41,9 +41,8 @@ const CreateConference = () => {
 
     return (
         <div>
-            <h1>Welcome TO CREATE CONFERENCE SITE</h1>
+            <h1>Welcome here you can create or view/edit conferences</h1>
 
-            <h1>MAKE CAPACITY ERROR MSG IF A LETTER IS ENTERED INSTEAD OF A NUMBER</h1>
 
 
             <table className="table table-light">
@@ -56,6 +55,7 @@ const CreateConference = () => {
                         <th>Date</th>
                         <th>time the conference starts</th>
                         <th>See talks in this conference</th>
+                        <th>Edit Conference</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -67,6 +67,7 @@ const CreateConference = () => {
                     <td>{c.date}</td>
                     <td>{c.time}</td>
                     <td><NavLink to={`/conferencecontent/${c.id}`}><button className="btn btn-success">See talks in this conference</button></NavLink></td>
+                    <td><NavLink to={`/editconference/${c.id}`}><button className="btn btn-success">Edit Conference</button></NavLink></td>
                     </tr>))}
 
 

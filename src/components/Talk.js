@@ -1,12 +1,18 @@
 import { useState, useEffect } from "react"
 import apiUtils from "../utils/apiUtils"
-import { NavLink } from "react-router-dom"
 import axios from "axios"
 
 const Talk = () => {
     const URL = apiUtils.getUrl()
 
     const [talks, setTalks] = useState([]);
+    const [createTalk, setCreateTalk] = useState({ topic: "", duration: "", propsList: "", conference: {id: 0} });
+
+
+    //Used to create createTalk
+    const handleInput = (event) => {
+        setCreateTalk({ ...createTalk, [event.target.id]: event.target.value })
+    }
 
 
     useEffect(() => {
@@ -26,6 +32,18 @@ const Talk = () => {
         setTalks(response.data.talks)
     }
 
+    const createData = async () => {
+        await axios.post(URL + "/talk/create", {
+            topic: createTalk.topic,
+            duration: createTalk.duration,
+            propsList: createTalk.propsList,
+         conference: { id: createTalk.id }
+       })
+
+       //Fetch again in the function in order to re render the website(so it doesnt spam in network)
+      const response = await apiUtils.getAuthAxios().get(URL + '/talk/all')
+      setTalks(response.data.talks)
+    }
 
     return (
 
@@ -57,8 +75,18 @@ const Talk = () => {
 
                
             </table>
+
+            <div className="center">
+                <form onChange={handleInput}>
+                    <input placeholder="topic" id="topic" />
+                    <input placeholder="duration" id="duration" />
+                    <input placeholder="propsList" id="propsList" />
+                    <input  id="id" placeholder="Enter conference ID" type="text"></input>
+                </form>   
+                <button className="btn btn-success" onClick={createData}>Create</button>
+            </div>
+
         </div>
     )
 }
-
 export default Talk
